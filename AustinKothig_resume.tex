@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Austin Kothig Resume
+%
+% Based off the following Overleaf template
+%   https://www.overleaf.com/latex/templates/recreating-business-insiders-cv-of-marissa-mayer/gtqfpbwncfvp
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper,normalphoto]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.0cm,right=1.0cm,top=1.0cm,bottom=1.0cm,columnsep=0.55cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" mmayer.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colors if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\hypersetup{
+    colorlinks,
+    linkcolor = VividPurple,
+    urlcolor  = VividPurple,
+    citecolor = VividPurple,
+    anchorcolor = VividPurple
+}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\faAngleRight}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+\begin{document}
+\name{Austin Kothig}
+\tagline{MASc in Systems Design Engineering, BSc in Computer Science}
+\photoR{2.75cm}{qr-code}
+
+\personalinfo{%
+    \email{\href{mailto:austin.kothig@gmail.com}{austin.kothig@gmail.com}}
+    \homepage{\href{https://austin-kothig.ca}{austin-kothig.ca}}
+    \github{\href{https://github.com/kothiga}{kothiga}}
+    \\
+    \linkedin{\href{https://www.linkedin.com/in/austin-kothig}{LinkedIn}}
+    \scholar{\href{https://scholar.google.ca/citations?user=3oIJ5pUAAAAJ&hl=en}{Google Scholar}}
+    \location{\href{https://maps.app.goo.gl/e4rprgPyH9jdUyf79}{Toronto, ON}}
+}
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+\setitemize{label=\faAngleRight}
+% leftmargin=15pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,labelsep=0
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+\vspace{-10px}
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\faChartPie~~Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvevent{Software Developer II}{IBM}{2023 -- Present}{Toronto, ON}
+\begin{itemize}
+    \item I work on a team that develops \textbf{tracing} and \textbf{backend} components of the observability platform \href{https://www.ibm.com/products/instana}{Instana}.
+    \item I have provided open source contributions to the OLAP database \href{https://clickhouse.com/}{ClickHouse} to fix \textbf{Big-Endian} serialization bugs which then provided support for the s390x (IBM-Z) architecture.
+    \item Within Instana, I currently work on a tracing component for PHP and have developed an open source \href{https://opentelemetry.io/}{OpenTelemetry} exporter which allows compatibility between the otel PHP SDK and Instana.
+\end{itemize}
+
+\divider
+
+\cvevent{Software Developer II}{BlackBerry}{2022 -- 2023}{Waterloo, ON}
+\begin{itemize}
+    \item I was on a team that developed various customer-facing \textbf{software samples} to demonstrate development with the \href{https://blackberry.qnx.com/en/products/automotive/blackberry-ivy}{Intelligent Vehicle Data Platform (IVY)} framework. One such was a POC demo called Occupancy Identity Synthetic-Sensor, a machine learning system to \textbf{identify} and \textbf{remember} individuals inside a vehicle using facial embeddings.
+    \item I led a technical investigation into developing a set of high-quality samples to show how \textbf{hardware data} can be integrated into the IVY framework.
+\end{itemize}
+
+\divider
+
+\cvevent{Graduate Research Assistant}{SIRRL}{2019 -- 2022}{Waterloo, ON}
+\begin{itemize}
+    \item I was a member of the \textbf{Social and Intelligent Robotics Research Lab} (SIRRL) at the University of Waterloo. With this group, I worked with the \href{https://icub-tech-iit.github.io/documentation/}{iCub humanoid robot} and the \href{https://robots.ieee.org/robots/qtrobot/}{QTrobot}.
+    \item For my research project I developed a \textbf{conceptual framework} for providing physiological data to robotic systems for real-time adaptation. Due to the COVID-19 pandemic, human participant research was restricted, which led me to implement a simple proof of concept scenario involving a \textbf{physiologically-aware} \href{https://doi.org/10.1109/RO-MAN50785.2021.9515383}{robotic exercise coach}.
+    \item In 2020 I received a \textbf{research grant} from Microsoft which provided funding to hire two coop students that I had the opportunity to mentor for a summer.
+    \item I have \textbf{collaborated} with colleagues on research projects and coauthored work related to people's expectations with an \href{https://doi.org/10.1109/LRA.2021.3083465}{unreliable robot} and exploration of if a robot can divert you from \href{https://doi.org/10.1145/3623809.3623879}{social engineering attacks}.
+\end{itemize}
+
+\divider
+
+\cvevent{Teaching Assistant}{University of Waterloo}{2019 -- 2022}{Waterloo, ON}
+\begin{itemize}
+    \item I TA'd a variety of courses in the Faculty of Engineering, including \textit{Algorithms and Data Structures}, \textit{Introduction to Design}, and \textit{Discrete Mathematics and Logic}.
+    \item I led weekly tutorials and labs; held office hours; and graded for exams.
+\end{itemize}
+
+\divider
+
+\cvevent{Undergraduate Research Assistant}{Cognitive Robotics Lab}{2017 -- 2019}{Lethbridge, AB}
+\begin{itemize}
+    \item I was a member of the Cognitive Robotics Lab at the University of Lethbridge, where I developed a \textbf{biologically inspired} \href{https://doi.org/10.1109/ROSE.2019.8790411}{audio attention system} for the iCub.
+    \item During this time I received funding through \textbf{NSERC}, as well as \textbf{Mitacs} which allowed me to spend a semester abroad in Genoa, Italy collaborating with international colleagues.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\switchcolumn
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\faLeaf~~Summary}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{quote}
+    \small
+    \justifying
+    \setlength\parindent{0pt}
+    I am a Canadian software developer with three years of industry experience. My expertise lies in low-level C++ development, and I possess a strong attention to detail in both design and implementation. I am passionate about creating efficient, robust software solutions and continuously expanding my technical skills.
+\end{quote}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\faLaptopCode~~Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvachievement{\faCogs}{Programming}{
+    \small
+    \justifying
+    \setlength\parindent{0pt}
+    I am proficient in \textbf{C++} and \textbf{Python}, but also have some experience working with \textbf{Kotlin}, \textbf{Java}, \textbf{Rust} and \textbf{PHP}.
+    I conduct my development primarily in \textbf{Docker} (containerized) environments on both \textbf{Linux} and \textbf{Mac} systems.
+}
+
+\divider
+
+\cvachievement{\faBrain}{Personal Management}{
+    \small
+    \justifying
+    \setlength\parindent{0pt}
+    I thrive in both \textbf{collaborative} team settings and \textbf{independent} project work.
+    I excel in \textbf{communication}, simplifying complex topics for discussion with diverse audiences.
+    My approach to problem-solving involves \textbf{identifying} key questions, \textbf{designing} effective solutions, and \textbf{iteratively} implementing them efficiently. 
+    \textbf{}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\faGraduationCap~~Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cveducation{MASc in Systems Design Engineering}{University of Waterloo}{}{}
+\vspace{-5px}
+\begin{itemize}
+    \item Advisor: Prof. Kerstin Dautenhahn
+    \item Thesis: \say{\textit{Accessible Integration of Physiological Adaptation in Human-Robot Interaction}} \href{https://uwspace.uwaterloo.ca/handle/10012/17462}{\faLink}
+\end{itemize}
+
+\vspace{1px}
+
+\cveducation{BSc\ in Computer Science}{University of Lethbridge}{}{}
+\vspace{-5px}
+\begin{itemize}
+    \item Graduated with Co-operative Education
+    \item Exchange term at the Italian Institute of Tech. \href{https://www.ulethbridge.ca/unews/article/mitacs-award-winner-takes-studies-overseas-italy}{\faLink}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\faTrophy~~Achievements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvachievement{\faLandmark}{Awards and Honors}{
+    Select Academic Achievements
+}
+\begin{itemize} %\footnotesize
+    \item (2020) Microsoft AI for Social Good Research Grant
+    \item (2019) Engineering Dean's Entrance Award
+    \item (2019) NSERC Undergraduate Student Research Award
+    \item (2018) Mitacs Globalink Research Award
+    \item (2018) Chinook Summer Research Award
+    \item (2018) Simpson-Markinch Award
+    \item (2017, 2018) Jason Lang Scholarship
+\end{itemize}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \cvsection{Publications}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{itemize} %\footnotesize
+%     \item (2023) Pasquali D, \underline{Kothig A}, Aroyo AM, Mu{\~n}oz J, Dautenhahn K, Bencetti S, Francesco R, Sciutti A. \say{That's not a Good Idea: A robot changes your behavior against social engineering}. In International Conference on Human-Agent Interaction
+%     \item (2021) \underline{Kothig A}, Mu{\~n}oz J, Akgun SA, Aroyo AM, Dautenhahn K. \say{Connecting humans and robots using physiological signals -- closing-the-loop in HRI}. In IEEE International Conference on Robot and Human Interactive Communication
+%     \item (2021) Aroyo AM, Pasquali D, \underline{Kothig A}, Rea F, Sandini G, Sciutti A. \say{Expectations vs. Reality: Unreliability and transparency in a treasure hunt game with iCub}. IEEE Robotics and Automation Letters
+%     \item (2020) \underline{Kothig A}, Mu{\~n}oz J, Mahdi H, Aroyo AM, Dautenhahn K. \say{HRI Physio Lib: A software framework to support the integration of physiological adaptation in HRI}. In International Conference on Social Robotics
+%     \item (2020) Rea F, \underline{Kothig A}, Grasse L, Tata M. \say{Speech envelope dynamics for noise-robust auditory scene analysis in robotics}. International Journal of Humanoid Robotics
+%     \item (2019) \underline{Kothig A}, Ilievski M, Grasse L, Rea F, Tata M. \say{A Bayesian system for noise-robust binaural sound localisation for humanoid robots}. In IEEE International Symposium on Robotic and Sensors Environments '13
+% \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\faTree~~Hobbies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvtag{\faMountain~~Climbing}
+\cvtag{\faRunning~~Running}
+\cvtag{\faBasketballBall~~Basketball}
+\cvtag{\faCamera~~Urban Photography}
+\cvtag{\faFlagCheckered~~Motorsport}
+
+\end{paracol}
+\end{document}

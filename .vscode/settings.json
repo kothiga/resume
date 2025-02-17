@@ -1,0 +1,31 @@
+{
+    "cSpell.words": [
+        "Dautenhahn",
+        "eamodio",
+        "Globalink",
+        "headingrule",
+        "Instana",
+        "Kerstin",
+        "Kothig",
+        "labelsep",
+        "lualatex",
+        "Markinch",
+        "Mitacs",
+        "mmayer",
+        "noitemsep",
+        "NSERC",
+        "OLAP",
+        "paracol",
+        "parsep",
+        "partopsep",
+        "pdflatex",
+        "SIRRL",
+        "topsep",
+        "USRA",
+        "xdvipdfmx"
+    ],
+    "editor.wordWrap": "on",
+    "[markdown]": {
+        "files.autoSave": "afterDelay"
+    }
+}
